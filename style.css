@@ -1,0 +1,50 @@
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #000000cf;
+    font-family: 'Anonymous Pro', sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.array, .result{
+    color: #fff;
+    font-size: 13px;
+}
+.arr-map, .result-map{
+    margin-bottom: 65px;
+    margin-top: 65px;
+    background-color: #636464;
+}
+
+ .arr-filter, .arr-reduce, .result-filter, .result-reduce{
+    margin-bottom: 40px;
+    background-color: #636464;
+}
+
+.arr-find, .result-find{
+    margin-bottom: 45px;
+    background-color: #636464;
+}
+
+.arr-findIndex, .result-findIndex{
+    background-color: #636464;
+}
+
+.code{
+    width: 33%;
+}
+
+.result-filter, .result-reduce, .result-find, .result-findIndex{
+    padding: 29px 5px;
+}
