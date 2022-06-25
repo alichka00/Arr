@@ -1,98 +1,86 @@
-let users = [
+const users = [
     {id: 1, name: 'Frank', gender: 'male', value: 500},
     {id: 2, name: 'Rick', gender: 'male', value: 0},
     {id: 3, name: 'Mark', gender: 'male', value: 50},
     {id: 4, name: 'Fiona', gender: 'female', value: 450},
-]
+];
 
-let json = JSON.stringify(users);
-
-//array map
-let titles = users.map(item=> {
-    if (item.gender == 'male'){
-        item.name = `Mr.${item.name}`;
-    }else{
-        item.name = `Mrs.${item.name}`;
-    }
-}) 
-console.log(users)
-
-//array filter
-let someUser = users.filter(item =>item.id == 4);
-console.log(someUser)
-
-//array reduce
-let budget = users.reduce((amount, item) =>amount + item.value, 0);
-console.log(budget)
-
-//find
-let user = users.find(item =>item.id ==1);
-console.log(user)
-
-//findIndex
-let index = users.findIndex(item =>item.id ==3);
-console.log(index)
-
-//init codemirror
-var myCodeMirror = CodeMirror(document.querySelector('.code'), {
-value: `//array map
-let titles = users.map(item=> {
-    if (item.gender == 'male'){
-        item.name = 'Mr.$'{item.name}';
-    }else{
-        item.name = 'Mrs.$'{item.name}';
-    }
-}) 
------------------------------------------------------------------------------------------
-//array filter
-let someUser = users.filter(item =>item.id == 4);
------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------
-//array reduce
-let budget = users.reduce((amount, item) =>amount + item.value, 0);
------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------
-//find
-let user = users.find(item =>item.id ==1);
------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------
-//findIndex
-let index = users.findIndex(item =>item.id ==3);
------------------------------------------------------------------------------------------`,
-mode:  "javascript",
-mode: "text/x-groovy", 
-lineNumbers: true,  
-theme: "darcula",  
+// Array map
+const titles = users.map(item => {
+    item.gender == 'male' ? item.name ='Mr.' + (item.name) : item.name = 'Mrs.' + (item.name)
 });
 
-//result
-let  titlesResult =[
-    {id: 1, name: 'Mr.Frank', gender: 'male', value: 500},
-    {id: 2, name: 'Mr.Rick', gender: 'male', value: 0},
-    {id: 3, name: 'Mr.Mark', gender: 'male', value: 50},
-    {id: 4, name: 'Mrs.Fiona', gender: 'female', value: 450},
-]
+// Array filter
+const someUser = users.filter(item => item.id == 4);
 
-let jsonTitles = JSON.stringify(titlesResult);
+// Array reduce
+const budget = users.reduce((amount, item) => amount + item.value, 0);
+
+// Find
+const user = users.find(item => item.id == 1);
+
+// FindIndex
+const index = users.findIndex(item => item.id == 3);
+
+// Init codemirror
+var myCodeMirror = CodeMirror(document.querySelector('.code-map'), {
+value: `// Array map
+const titles = users.map(item => {
+    item.gender == 'male' ? item.name ='Mr.' + (item.name) : item.name = 'Mrs.' + (item.name)
+})`,
+    mode:  "javascript",
+    mode: "text/x-groovy", 
+    lineNumbers: true,  
+    theme: "darcula",  
+    });
+
+var myCodeMirror = CodeMirror(document.querySelector('.code-filter'), {
+    value: `// Array filter
+const someUser = users.filter(item => item.id == 4);`,
+    mode:  "javascript",
+    mode: "text/x-groovy", 
+    lineNumbers: true,  
+    theme: "darcula",  
+    });
+
+var myCodeMirror = CodeMirror(document.querySelector('.code-reduce'), {
+    value: `// Array reduce
+const budget = users.reduce((amount, item) => amount + item.value, 0);`,
+    mode:  "javascript",
+    mode: "text/x-groovy", 
+    lineNumbers: true,  
+    theme: "darcula",  
+    });
+
+var myCodeMirror = CodeMirror(document.querySelector('.code-find'), {
+    value: `// Find
+const user = users.find(item => item.id == 1);`,
+    mode:  "javascript",
+    mode: "text/x-groovy", 
+    lineNumbers: true,  
+    theme: "darcula",  
+    });
+
+var myCodeMirror = CodeMirror(document.querySelector('.code-findIndex'), {
+    value: `// Find
+const user = users.find(item =>item.id ==1);`,
+    mode:  "javascript",
+    mode: "text/x-groovy", 
+    lineNumbers: true,  
+    theme: "darcula",  
+    });
+
+// Result
+const jsonTitles = JSON.stringify(users);
  document.querySelector(".result-map").innerHTML = jsonTitles;
 
-let someUserResult = [
-    {id: 4, name: 'Mrs.Fiona', gender: 'female', value: 450},   
-]
-
-let jsonSomeUser = JSON.stringify(someUserResult);
+const jsonSomeUser = JSON.stringify(someUser);
  document.querySelector(".result-filter").innerHTML = jsonSomeUser;
 
- let userResult = [
-    {id: 4, name: 'Mrs.Fiona', gender: 'female', value: 450},   
-]
-
-let jsonUser = JSON.stringify(userResult);
+const jsonUser = JSON.stringify(user);
  document.querySelector(".result-find").innerHTML = jsonUser;
 
+ const json = JSON.stringify(users);
  document.querySelector(".arr-map").innerHTML = json;
  document.querySelector(".arr-filter").innerHTML = json;
  document.querySelector(".arr-reduce").innerHTML = json;

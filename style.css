@@ -17,34 +17,25 @@ h1{
     margin-bottom: 15px;
 }
 
-.array, .result{
+.array{
     color: #fff;
     font-size: 13px;
-}
-.arr-map, .result-map{
-    margin-bottom: 65px;
-    margin-top: 65px;
-    background-color: #636464;
+    margin-bottom: 3px;
 }
 
- .arr-filter, .arr-reduce, .result-filter, .result-reduce{
-    margin-bottom: 40px;
-    background-color: #636464;
-}
-
-.arr-find, .result-find{
-    margin-bottom: 45px;
-    background-color: #636464;
-}
-
-.arr-findIndex, .result-findIndex{
-    background-color: #636464;
+.arr-map, .result-map, .arr-filter, .result-filter, .arr-reduce, .result-reduce, .arr-find, .result-find, .arr-findIndex, .result-findIndex{
+    padding-top: 60px;
 }
 
 .code{
     width: 33%;
 }
 
-.result-filter, .result-reduce, .result-find, .result-findIndex{
-    padding: 29px 5px;
+hr{
+    margin: 0px 0;
+    padding: 0;
+    height: 10px;
+    border: none;
+    border-top: 3px solid #333;
+    box-shadow: 0 10px 6px -11px #8c8b8b inset;
 }
