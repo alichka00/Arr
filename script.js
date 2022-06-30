@@ -10,7 +10,6 @@ const titles = [...users].map(item => {
     item.gender == 'male' ? item.name ='Mr.' + (item.name) : item.name = 'Mrs.' + (item.name)
     return item
 });
-console.log(titles)
 
 // Array filter
 const someUser = [...users].filter(item => item.id == 4);
