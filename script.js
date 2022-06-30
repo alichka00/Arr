@@ -6,21 +6,23 @@ const users = [
 ];
 
 // Array map
-const titles = users.map(item => {
+const titles = [...users].map(item => {
     item.gender == 'male' ? item.name ='Mr.' + (item.name) : item.name = 'Mrs.' + (item.name)
+    return item
 });
+console.log(titles)
 
 // Array filter
-const someUser = users.filter(item => item.id == 4);
+const someUser = [...users].filter(item => item.id == 4);
 
 // Array reduce
-const budget = users.reduce((amount, item) => amount + item.value, 0);
+const budget = [...users].reduce((amount, item) => amount + item.value, 0);
 
 // Find
-const user = users.find(item => item.id == 1);
+const user = [...users].find(item => item.id == 1);
 
 // FindIndex
-const index = users.findIndex(item => item.id == 3);
+const index = [...users].findIndex(item => item.id == 3);
 
 // Init codemirror
 var myCodeMirror = CodeMirror(document.querySelector('.code-map'), {
@@ -62,8 +64,8 @@ const user = users.find(item => item.id == 1);`,
     });
 
 var myCodeMirror = CodeMirror(document.querySelector('.code-findIndex'), {
-    value: `// Find
-const user = users.find(item =>item.id ==1);`,
+    value: `// FindIndex
+const index = users.findIndex(item => item.id == 3);`,
     mode:  "javascript",
     mode: "text/x-groovy", 
     lineNumbers: true,  
@@ -77,8 +79,14 @@ const jsonTitles = JSON.stringify(users);
 const jsonSomeUser = JSON.stringify(someUser);
  document.querySelector(".result-filter").innerHTML = jsonSomeUser;
 
+ const jsonBudget = JSON.stringify(budget);
+ document.querySelector(".result-reduce").innerHTML = jsonBudget;
+
 const jsonUser = JSON.stringify(user);
  document.querySelector(".result-find").innerHTML = jsonUser;
+
+ const jsonIndex = JSON.stringify(index);
+ document.querySelector(".result-findIndex").innerHTML = jsonIndex;
 
  const json = JSON.stringify(users);
  document.querySelector(".arr-map").innerHTML = json;
